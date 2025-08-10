@@ -1,0 +1,34 @@
+//AkaBobur fastdecode script
+//https://github.com/AkaBobur/fastdecode/
+import_code("/root/passload")
+
+args = params()
+if len(args) != 1 then
+    print("Usage: fastdecod <hash> OR fastdecod <user:hash>")
+    exit()
+end if
+
+load_passwords()
+
+inputVal = args[0]
+parts = inputVal.split(":")
+
+if len(parts) == 1 then
+    hashVal = parts[0]
+    if PASSWORDS[hashVal] != null then
+        print(PASSWORDS[hashVal])
+    else
+        print("No match for " + hashVal)
+    end if
+
+else if len(parts) == 2 then
+    user = parts[0]
+    hashVal = parts[1]
+    if PASSWORDS[hashVal] != null then
+        print(user + ":" + PASSWORDS[hashVal])
+    else
+        print(user + ":" + hashVal + " (no match)")
+    end if
+else
+    print("Invalid input format")
+end if

@@ -1,0 +1,33 @@
+//AkaBobur fastdecode script
+//https://github.com/AkaBobur/fastdecode/
+PASSWORDS = {}
+
+load_passwords = function()
+    passDirPath = "/root/passlist/"
+    fileListFile = passDirPath + "files_list.txt"
+
+    fileListObj = get_shell.host_computer.File(fileListFile)
+    if not fileListObj then
+        print("Error: files_list.txt not found at " + fileListFile)
+        exit()
+    end if
+
+    fileNames = fileListObj.get_content().split("\n")
+
+    for fname in fileNames
+        if fname != "" then
+            fObj = get_shell.host_computer.File(passDirPath + fname)
+            if fObj then
+                lines = fObj.get_content().split("\n")
+                for line in lines
+                    parts = line.split(":")
+                    if len(parts) == 2 then
+                        key = parts[0]
+                        val = parts[1]
+                        PASSWORDS[key] = val
+                    end if
+                end for
+            end if
+        end if
+    end for
+end function
