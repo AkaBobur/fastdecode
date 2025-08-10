@@ -10,5 +10,9 @@ fastdecode 5c0c62dd7945a1bf0fd4e07454e0b53c
 ```
 <br>
 output: rippel <br>
-input: fastdecode root:5c0c62dd7945a1bf0fd4e07454e0b53c <br>
+input: 
+```
+fastdecode root:5c0c62dd7945a1bf0fd4e07454e0b53c
+```
+<br>
 ouput: root:rippel
