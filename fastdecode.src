@@ -4,7 +4,7 @@ import_code("/root/passload")
 
 args = params()
 if len(args) != 1 then
-    print("Usage: fastdecod <hash> OR fastdecod <user:hash>")
+    print("Usage: fastdecode <hash> OR fastdecode <user:hash>")
     exit()
 end if
 
@@ -32,3 +32,4 @@ else if len(parts) == 2 then
 else
     print("Invalid input format")
 end if
+
