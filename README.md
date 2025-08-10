@@ -5,13 +5,13 @@ You can use Greybel VS code extension to import all passlist/files OR U can just
 Usage: <quote>fastdecode <hash> OR fastdecode <user:hash></quote> <br>
 example: <br>
 input:
-```
+```sh
 fastdecode 5c0c62dd7945a1bf0fd4e07454e0b53c
 ```
 <br>
 output: rippel <br>
 input: 
-```
+```sh
 fastdecode root:5c0c62dd7945a1bf0fd4e07454e0b53c
 ```
 <br>
